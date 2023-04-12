@@ -20,3 +20,22 @@ myvar03[1] == mytranspose(myvar03)[1] #TRUE
 myvar03[2] == mytranspose(myvar03)[2] #TRUE
 all.equal.raw((myvar03), mytranspose(mytranspose(myvar03))) #TRUE
 
+myvar04 <- matrix(c(1,2), nrow=2, ncol=1)
+myvar04
+mytranspose(myvar04)
+myvar04[1] == mytranspose(myvar04)[1] #TRUE
+myvar04[2] == mytranspose(myvar04)[2] #TRUE
+all.equal.raw((myvar04), mytranspose(mytranspose(myvar04))) #TRUE
+
+myvar05 <- c(1,2,NA,3)
+myvar05
+mytranspose(myvar05)
+myvar05[1] == mytranspose(myvar05)[1] #TRUE
+myvar05[2] == mytranspose(myvar05)[2] #TRUE
+myvar05[4] == mytranspose(myvar05)[4] #TRUE
+all.equal.raw(as.numeric(myvar05), as.numeric(mytranspose(mytranspose(myvar05)))) #TRUE
+
+myvar06 <- c(NA)
+myvar06
+mytranspose(myvar06)
+all.equal.raw(as.numeric(myvar06), as.numeric(mytranspose(mytranspose(myvar06)))) #TRUE
