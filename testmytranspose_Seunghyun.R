@@ -20,3 +20,22 @@ myvar03[1] == mytranspose(myvar03)[1] #TRUE
 myvar03[2] == mytranspose(myvar03)[2] #TRUE
 all.equal.raw((myvar03), mytranspose(mytranspose(myvar03))) #TRUE
 
+myvar07 <- c()
+myvar07
+mytranspose(myvar07)
+all.equal.raw((myvar07), mytranspose(mytranspose(myvar07))) #TRUE
+
+
+d <- c(1,2,3,4)
+e <- c("red", "white", "red", NA)
+f <- c(TRUE, TRUE, TRUE, FALSE)
+myvar08 <- data.frame(d,e,f)
+
+myvar08
+mytranspose(myvar08)
+myvar08[1,2] == mytranspose(myvar08)[2,1] #TRUE
+myvar08[2,3] == mytranspose(myvar08)[3,2] #TRUE
+myvar08[3,1] == mytranspose(myvar08)[1,3] #TRUE
+myvar08[4,1] == mytranspose(myvar08)[1,4] #TRUE
+myvar08[4,3] == mytranspose(myvar08)[3,4] #TRUE
+all.equal.raw((myvar08), mytranspose(mytranspose(myvar08)), check.attributes = FALSE) #TRUE
